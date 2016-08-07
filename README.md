@@ -1,78 +1,15 @@
-# Novum Pharma Data Analysis Challenge
+﻿Overview
+I was given the task of analyzing the Movie Lens 100k (ml-100k) dataset to produce interesting insight about the data.  I created 5 different ranking algorithms and analyzed the results of each and I created a Random Forest Classifier to predict a user’s rating of a given film from an out of sample population.
+Analysis
+Comparison of Ranking Algorithms
+I compared 5 different ranking algorithms – 3 to sort of the best movie, and 2 to sort of the most polarizing. 
+The main script for this section is called ranking-comparison.py.  It utilized the rankings.py and functions.py, all of which are located in the root of this repo.
 
-### The Challenge
+The results of this section are explained in detail in the first section of the Novum Data Challege.docx document.
+ 
+Random Forest Classifier to Predict Film Rankings
+I created a Random Forest Classifier model using Scikit Learn to predict the rating that a user would give a movie based on a set of features which describe the user and the film. 
 
-  Show us something interesting using the provided dataset. You may use any
-  tool/programming language of your choice so long as that tool is available
-  for free (you may assume we have Microsoft Office). The use of additional,
-  external datasets is welcomed, but not required.
+The main script for this section is titled rfc-ml.py. It utilizes the functions.py script.
 
-  Examples of interesting analyses include (but are not limited to):
-  
-    - How effective is occupation as a predictor of whether a person will
-      enjoy an action film?
-    - Are there generalizations that can be made regarding opinions of films
-      released at different points in the viewer's life?
-
-  How you choose to convey your findings is completely up to you.
-  Examples include: a Word document containing a written account of the
-  analysis, a Power Point slide deck, a website, a Jupyter Notebook, etc.
-
-### About the dataset
-
-  The dataset you will be using is the MovieLens 100K Dataset. This dataset
-  contains 100,000 movie ratings from 1000 users on 1700 films. It was compiled
-  by the University of Minnesota during a seven-month time period between
-  September 19th, 1997 and April 22nd, 1998. More information on the dataset
-  can be found in the README, located here:
-  http://files.grouplens.org/datasets/movielens/ml-100k-README.txt.
-
-  The data can be downloaded through the following url:
-  http://files.grouplens.org/datasets/movielens/ml-100k.zip
-
-### Time limit
-
-  You have either 48 or 72 hours to complete your analysis depending on whether you
-  choose to use the weekend or weeknights, respectively. This short time
-  period is not meant to intimidate; rather, it is meant to be a reflection of
-  our expectations for the depth of analysis in this challenge. We're not
-  expecting academic-level research--just enough to make us say, "Hmm, that's
-  interesting." The total time spent on this challenge should be around 6 to 8
-  hours, though more or less is fine.
-
-### Delivering your results
-
-  Before the end of your time limit, please reply to this email with one of the
-  following:
-  
-    - (Preferred) A link to a GitHub repo containing all findings, presentation
-      materials, and code used in this challenge. If you choose this method, 
-      please fork this repo and complete your work in the forked repo.
-    - A zip file (no larger than 25MB) containing all finding, presentation
-      materials, and code used in this challenge.
-
-  Additionally, your zip file/repo should contain a file called "README.md"
-  which explains where your findings can be found and how to reproduce your
-  analysis.
-
-### Post-analysis questions
-
-  On your interview day, you will meet with a member of the Novum Pharma team
-  to discuss your analysis. Be prepared to answer the following questions
-  during this time:
-  
-    - If given more time what else would you do?
-    - Why did you use the tools you used?
-    - How would your approach change if the data set contained 1 billion
-      ratings? Which tools would you use?
-    - Let’s say that you wanted to reproduce your analysis on a regular
-      basis—-say, once a week in perpetuity. How would you accomplish this?
-
-### Questions or bug fixes
-
-  If you have any questions during your completion of the challenge or find 
-  any bugs along the way, please create an issue for this repo and tag it 
-  appropriately. A member of the team will respond as soon as possible.
-
-
-Good Luck!
+The results of this section are explained in detail in the second section of the Novum Data Challege.docx document.
