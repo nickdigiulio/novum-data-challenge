@@ -1,4 +1,6 @@
 import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
 from ranking import *
 from functions import *
 
@@ -43,11 +45,33 @@ score[['Title', 'Average', 'Ratings', 'Fresh', 'Rotten']].sort_values(by=['Avera
 
 genre_average = pd.merge(item, data, left_index=True, right_index=True).groupby('Genre').mean()['Rating']
 score = pd.merge(score, pd.DataFrame(genre_average), left_on='Genre', right_index=True)
-
-score = pd.merge(score, runtimes, how='left', left_index=True, right_index=True)
     
 score['Confidence'] = score[['Fresh', 'Rotten']].apply(confidence, axis = 1)    
 score['CredInt'] = score[['Average', 'Rating', 'Ratings']].apply(bayes, axis=1)
 score['Polarizing'] = score[['Fresh', 'Rotten', 'Ratings']].apply(polarizing, axis=1)
 score['Polarizing2'] = score[['1', '2', '3', '4', '5']].apply(polarizing2, axis=1)    
-    
+
+score.to_csv('./data/film_ratings.csv')
+
+average = plt.figure(1)
+conf = plt.figure(2)
+cred = plt.figure(3)
+pol1 = plt.figure(4)
+pol2 = plt.figure(4)
+
+average = sns.distplot(score['Average'], label='Average Rating')
+plt.savefig('./fig/pure_average_distribution.png')
+plt.clf()
+conf = sns.distplot(score['Confidence'], label='Wilson Score')
+plt.savefig('./fig/confidence_distribution.png')
+plt.clf()
+cred = sns.distplot(score['CredInt'])
+plt.savefig('./fig/credibility_distribution.png', label='Baysian Credibility Inteval')
+plt.clf()
+pol1 = sns.distplot(score['Polarizing'])
+plt.savefig('./fig/polarizing1_distribution.png', label='Polarizing1')
+plt.clf()
+pol2 = sns.distplot(score['Polarizing2'])
+plt.savefig('./fig/polarizing2_distribution.png', label='Polarizing2')
+plt.clf()
+

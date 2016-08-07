@@ -111,11 +111,14 @@ y_predict = rfc.predict(x_test)
 #                        Measure Error                                        #
 ###############################################################################
 # Mean Squared Error
-error = 0
+mse = 0
+avg_err = 0
 for i in xrange(len(y_test)):
-    error += abs(y_test[i] - y_predict[i])**2
+    mse += abs(y_test[i] - y_predict[i])**2
+    avg_err += abs(y_test[i] - y_predict[i])
+    
 
-print "MSE: {}".format(float(error)/len(y_test))
+print "MSE: {}".format(float(mse)/len(y_test))
 
 result = [0, 0, 0, 0, 0]
 for i in xrange(len(y_test)):
